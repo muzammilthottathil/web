@@ -1,2 +1,3 @@
-# web
-testing before pure hosting
+## Counter
+
+Open Source Project Counter
