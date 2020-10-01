@@ -6,15 +6,16 @@ function App() {
   const [count, setCount] = useState(0);
 
   const resetFunction = () => {
-    console.log("reset triggered");
+    setCount(prevCount => 0 )
   };
 
   const increment = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount(prevCount => prevCount + 1);
   };
   const decrement = () => {
     // do not go to -ve , stop at zero
-    console.log("decrement Triggered");
+    if(count > 0) setCount(prevCount => prevCount - 1);
+    // console.log("decrement Triggered");
   };
 
   return (
@@ -22,7 +23,7 @@ function App() {
       <Header />
       <div className="mid-section">
         <div className="minus-button">
-          <span>-</span>
+          <span onClick={decrement}>-</span>
         </div>
 
         <div className="display-section">
